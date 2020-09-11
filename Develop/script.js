@@ -22,19 +22,19 @@ var generateBtn = document.querySelector("#generate");
 askPasswordlength()
 
 function askPasswordlength() {
-  var length = prompt("Enter the the length of the password:  (must be 8 - 128 characters)");
+  length = prompt("Enter the the length of the password:  (must be 8 - 128 characters)");
   if (length > 7 && length < 129) {
     //length vaildated 
     return parseInt(length);
   } else {
     //length invaid
     return askPasswordlength()
-    
   }
 }
 
 
 generatePasswordCriteria()
+
 // passsword citeria questions
 function generatePasswordCriteria() {
 
@@ -42,20 +42,17 @@ function generatePasswordCriteria() {
   lowercase = confirm("Do you want to use capital letters?");
   numbers = confirm("Do you want to use numbers?");
   specialChar = confirm("Do you want to use special characters?");
-  writePassword()
+  generatePassword()
 }
 
 
-// arrays for generating the password
+function generatePassword() {
+  // arrays for generating the password
+  var capLettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  var lowLettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  var specCharArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+"]
+  var numberArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-
-function writePassword() {
-var capLettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var lowLettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var specCharArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+"]
-var numberArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-  
-  
   randomPassword = "";
   characterArray = []
 
@@ -70,20 +67,20 @@ var numberArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
   if (specialChar)
     characterArray = characterArray.concat(specCharArray)
+
+
+  console.log(characterArray)
+
+  for (i = 0; i <= length; i++) {
+    randomPassword += characterArray[Math.floor(Math.random() * characterArray.length)]
   }
+}
+
+console.log(randomPassword)
 
 
-function generatePassword() {
-  
+  // function writePassword()
 // var password = generatePassword();
-for (i = 0; i <= length; i++) {
-  randomPassword += characterArray[Math.floor(math.random() * characterArray.length)]
-console.log(ran)
-}
-}
-
-
-
   // var passwordText = document.querySelector("#password");
 
   // passwordTextbox.value = password;
