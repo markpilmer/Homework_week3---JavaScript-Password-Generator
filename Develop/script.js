@@ -21,26 +21,46 @@ var generateBtn = document.querySelector("#generate");
 
 function askPasswordlength() {
   var length = prompt("Enter the the lengh of the password:  (must be 8 - 128 characters)");
-  if (length > 7 && length< 128) {
+  if (length > 7 && length < 129) {
+    //length vaildated 
     return parseInt(length);
-} else {
-  askPasswordlength()
+  } else {
+    //length invaid
+    askPasswordlength()
 
-}
-console.log(length)
+  }
+
 }
 
 askPasswordlength()
 
+function generatePasswordCriteria(){
 
+  var lowercase = confirm("Do you want to use capital letters?");
+  var uppercase = confirm("Do you want to use lowercase letters")
+  var numbers = confirm("Do you want to use numbers?");
+  var specialChar = confirm("Do you want to use special characters?");
+
+}
+
+var capLettersArray =["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var lowLettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var specCharArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+"]
+var numberArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+
+generatePasswordCriteria()
 // function writePassword() {
 
   // var
 
 
 
+//var password = generatePassword();
 
-  // var password = generatePassword();
+
+
+
   // var passwordText = document.querySelector("#password");
 
   // passwordTextbox.value = password;
