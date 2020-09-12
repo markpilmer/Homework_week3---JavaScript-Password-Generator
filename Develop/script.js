@@ -13,7 +13,7 @@ function askPasswordlength() {
   }
 }
 
-// Function to confirm characters to be used for password
+// function to confirm characters to be used for password
 function generatePasswordCriteria() {
   uppercase = confirm("Do you want to use lowercase letters")
   lowercase = confirm("Do you want to use capital letters?");
@@ -21,7 +21,7 @@ function generatePasswordCriteria() {
   specialChar = confirm("Do you want to use special characters?");
 }
 
-//function for creation of password 
+// function for creation of password 
 function createPassword() {
 
   askPasswordlength()
@@ -51,7 +51,6 @@ function createPassword() {
     console.log(randomPassword)
 
     document.getElementById("password").innerHTML = randomPassword;
-  
   }
   return randomPassword
 }
