@@ -1,24 +1,7 @@
-// Assignment Code
+
 var generateBtn = document.querySelector("#generate");
 
-
-// PseudoCode
-// 1. Prompt user for number bewteen 8 -128
-// validate input
-// 2. confirm user for lowercase
-// 3. confirm user for uppercase
-// 4. confirm user for numeric
-// 5. confirm user for special characters
-
-// 6. disply the crieria that was chosen
-// confirm criteria is correct
-
-// 7. if user confirms criteria correct generate password
-// 8. If user clicks cancel prompt for criteria again
-
-// Write password to the #password input
-
-
+// function query for pasword length
 function askPasswordlength() {
   length = prompt("Enter the the length of the password:  (must be 8 - 128 characters)");
   if (length > 7 && length < 129) {
@@ -30,7 +13,7 @@ function askPasswordlength() {
   }
 }
 
-// Fucntion for passsword citeria questions
+// Function to confirm characters to be used for password
 function generatePasswordCriteria() {
   uppercase = confirm("Do you want to use lowercase letters")
   lowercase = confirm("Do you want to use capital letters?");
@@ -38,10 +21,13 @@ function generatePasswordCriteria() {
   specialChar = confirm("Do you want to use special characters?");
 }
 
+//function for creation of password 
 function createPassword() {
+
   askPasswordlength()
   generatePasswordCriteria()
-  // arrays for generating the password
+
+  // arrays for for password generation
   var capLettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   var lowLettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   var specCharArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+"]
@@ -50,6 +36,7 @@ function createPassword() {
   randomPassword = "";
   let characterArray = []
 
+  //concatenating of arrays required for password
   if (uppercase)
     characterArray = characterArray.concat(capLettersArray)
   if (lowercase)
@@ -64,24 +51,18 @@ function createPassword() {
     console.log(randomPassword)
 
     document.getElementById("password").innerHTML = randomPassword;
-    
-
+  
   }
   return randomPassword
-  document.getElementById("password").innerHTML = randomPassword;
-  
-
-
-
-
-// function writePassword() {
-  // console.log(randomPassword)
-  // var password = randomPassword();
-
-  
-  // passwordTextbox.value = randomPassword;
 }
 
-
-// Add event listener to generate button
 generateBtn.addEventListener("click", createPassword);
+
+
+
+
+
+
+
+
+
